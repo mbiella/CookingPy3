@@ -35,17 +35,7 @@ for row in cur.execute('SELECT i.ID, i.name, t.typology  FROM ingredients as i I
     print(row)
 print('--------------------------------------------------------')
 '''
-opt = m.printMenu()
-
-while(1):
-    if(opt=='e'):
-        exit()
-    if(opt=='1'):
-        for row in cur.execute('SELECT i.ID, i.name, t.typology  FROM ingredients as i INNER JOIN typology as t on i.ID=t.ID'):
-            print(row)
-
-    
-    
+opt = m.printMenu(cur)
 
 # Save (commit) the changes
 con.commit()
