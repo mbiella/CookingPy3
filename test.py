@@ -14,7 +14,7 @@ cur = creaCursor(con)
 
 # executeSQL("DELETE FROM typology WHERE ID = 1", cur)
 
-'''
+
 print('--------------------------------------------------------')
 
 print('INGREDIENTI')
@@ -31,10 +31,10 @@ print('--------------------------------------------------------')
 
 print('INGREDIENTI')
 print(' ID  INGR.    TIPO')
-for row in cur.execute('SELECT i.ID, i.name, t.typology  FROM ingredients as i INNER JOIN typology as t on i.ID=t.ID'):
+for row in cur.execute('SELECT i.ID, i.name, t.typology  FROM ingredients as i INNER JOIN typology as t on i.typology=t.ID'):
     print(row)
 print('--------------------------------------------------------')
-'''
+
 opt = m.printMenu(cur)
 
 # Save (commit) the changes
